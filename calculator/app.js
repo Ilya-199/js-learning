@@ -9,14 +9,17 @@ if (type === "лендинг"){
 
 }
 const hours =Number(prompt("сколько часов"));
-let discount =Number(prompt("введите скидку в процентах"));
+if (!isNaN(hours)&& hours >0) {
+    let discount =Number(prompt("введите скидку в процентах"));
 let total = pricePerHour * hours ;
 let discountAmount = total * (discount/100);
-const totalWithDiscount = total - discountAmount;
+let totalWithDiscount = total - discountAmount;
+let urgent = prompt("Срочный заказ да или нет", "");
+if (urgent=="да"){
+     totalWithDiscount = totalWithDiscount * 1.5;
+}
 alert("цена за час работы " + pricePerHour + "руб");
 alert("время работы " + hours + "часов");
 alert("скидка " + discount + "%");
 alert("Итого к оплате "+ totalWithDiscount + "руб");
-
-
-    
+}
