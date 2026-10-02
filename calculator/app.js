@@ -1,25 +1,33 @@
-const type = prompt("Тип сайта: лендинг, магазин или бот?");
-
-let pricePerHour;
-if (type === "лендинг"){
-    pricePerHour = 800;
-} else if (type === "магазин") {
-    pricePerHour = 1500;
-} else { pricePerHour =1000;
-
+function getPrice(type){
+    if(type === "лендинг") return 800;
+    if(type === "магазин") return 1500;
+    if(type === "бот") return 1000;
+    return null;
 }
-const hours =Number(prompt("сколько часов"));
-if (!isNaN(hours)&& hours >0) {
-    let discount =Number(prompt("введите скидку в процентах"));
-let total = pricePerHour * hours ;
-let discountAmount = total * (discount/100);
-let totalWithDiscount = total - discountAmount;
-let urgent = prompt("Срочный заказ да или нет", "");
-if (urgent=="да"){
-     totalWithDiscount = totalWithDiscount * 1.5;
+function isValidHours(hours) {
+    if(!isNaN(hours) && hours>0)return true;
+    return false;
 }
-alert("цена за час работы " + pricePerHour + "руб");
-alert("время работы " + hours + "часов");
-alert("скидка " + discount + "%");
-alert("Итого к оплате "+ totalWithDiscount + "руб");
+function applyDiscount(sym, precent ){
+    return(sym - sym * (precent / 100));
+}
+function applyUrgency(sym, urgent){
+    if(urgent === "да")
+        return sym * 1.5;
+    return sym;
+}
+
+const type = prompt("Тип сайта лендинг магазин бот","");
+const pricePerHours = getPrice(type);
+const hours = Number(prompt("Сколько часов?",""));
+if (!isValidHours(hours)){
+    alert("Час нужно вводить числом больше нуля");
+}else {
+    const precent =Number(prompt("Скидка в процентах",""));
+    const price = (pricePerHours * hours);
+    const precentprice = applyDiscount(price, precent);
+    const urgency = prompt("Заказ срочный да или нет","");
+    const finalurgency = applyUrgency(precentprice, urgency);
+    alert ("Сумма" + finalurgency + "руб" );
+
 }
