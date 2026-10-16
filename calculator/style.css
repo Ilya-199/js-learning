@@ -1,0 +1,19 @@
+body {
+    max-width: 420;
+    margin: 40px auto;
+    padding: 0 16px;
+    font-family: system-ui, sans-serif;
+}
+input, select, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    font-size: 16px;
+}
+#result {
+    margin-top: 20px;
+    padding: 14px;
+    background: #f2f0ea;
+    border-radius: 8px;
+}

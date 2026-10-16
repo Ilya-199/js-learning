@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости сайта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Калькулятор стоимости сайта</h1>
+
+    <label for="type">Тип сайта</label>
+    <select id="type">
+        <option value="лендинг">Лендинг</option>
+        <option value="магазин">Интернет-магазин</option>
+        <option value="бот">Телеграм-бот</option>
+    </select>
+
+    <label for="hours">Часов работы</label>
+    <input type="number" id="hours" value="10">
+
+    <label for="discount">Скидка, %</label>
+    <input type="number" id="discount" value="0">
+
+    <label for="urgent">
+        <input type="checkbox" id="urgent"> Срочно (+50%)
+    </label>
+
+    <button id="calc">Посчитать</button>
+
+    <p id="result"></p>
+
+    <script src="app.js"></script>
+</body>
+</html>
