@@ -1,8 +1,18 @@
+const prices= {
+    "лендинг": {price: 1000, days: 5},
+    "магазин": {price: 1500, days: 14},
+    "бот": { price: 800, days: 3},
+    "визитка": {price: 600, days: 2}
+};
+const settings={
+    "urgentRate": 1.5
+};
 function types(type) {
-    if (type === "лендинг") return 1000;
-    if (type === "магазин") return 1500;
-    if (type === "бот") return 800;
-    return 0;
+    if(prices[type]===undefined)return 0;
+    return prices[type].price;
+}
+function getDays(day) {
+    return prices[day].days;
 }
 
 function isValidhours(hours) {
@@ -19,7 +29,7 @@ function discounts(discount, sum) {
 }
 
 function urgents(sum, urgent) {
-    if (urgent === true) return sum * 1.5;
+    if (urgent === true) return sum * settings.urgentRate;
     return sum;
 }
 
@@ -32,6 +42,7 @@ button.addEventListener("click", function () {
     const hours = Number(document.querySelector("#hours").value);
     const discount = Number(document.querySelector("#discount").value);
     const urgent = document.querySelector("#urgent").checked;
+    const srok = getDays(type);
 
     if (!isValidhours(hours)) {
         resultBox.textContent = "введи время корректно";
@@ -51,5 +62,5 @@ button.addEventListener("click", function () {
     }
 
     console.log(history);
-    resultBox.textContent = `Расчет№${history.length} К оплате ${urgentprice} Прошлый расчет ${proverka}`;
+    resultBox.textContent = `Расчет№${history.length} К оплате ${urgentprice} Срок ${srok} Прошлый расчет ${proverka}`;
 });
