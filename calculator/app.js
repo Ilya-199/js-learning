@@ -1,19 +1,23 @@
-const prices= {
-    "лендинг": {price: 1000, days: 5},
-    "магазин": {price: 1500, days: 14},
-    "бот": { price: 800, days: 3},
-    "визитка": {price: 600, days: 2},
-    "многостраничник": {price: 1200, days:10}
+const prices = {
+    "лендинг": { price: 1000, days: 5 },
+    "магазин": { price: 1500, days: 14 },
+    "бот": { price: 800, days: 3 },
+    "визитка": { price: 600, days: 2 },
+    "многостраничник": { price: 1200, days: 10 },
+    "интернет-магазин под ключ": { price: 2200, days: 21 }
 };
-const settings={
+
+const settings = {
     "urgentRate": 1.5
 };
+
 function types(type) {
-    if(prices[type]===undefined)return 0;
+    if (prices[type] === undefined) return 0;
     return prices[type].price;
 }
+
 function getDays(type) {
-    if(prices[type]===undefined)return 0;
+    if (prices[type] === undefined) return 0;
     return prices[type].days;
 }
 
@@ -44,7 +48,6 @@ button.addEventListener("click", function () {
     const hours = Number(document.querySelector("#hours").value);
     const discount = Number(document.querySelector("#discount").value);
     const urgent = document.querySelector("#urgent").checked;
-   
 
     if (!isValidhours(hours)) {
         resultBox.textContent = "введи время корректно";
@@ -67,6 +70,7 @@ button.addEventListener("click", function () {
     console.log(history);
     resultBox.textContent = `Расчет№${history.length} К оплате ${urgentprice} Срок ${srok} дней Прошлый расчет ${proverka}`;
 });
+
 const priceBox = document.querySelector("#pricelist");
 
 let spisok = "";
@@ -76,3 +80,12 @@ for (let key in prices) {
 }
 
 priceBox.textContent = spisok;
+
+const typeSelect = document.querySelector("#type");
+
+for (let key in prices) {
+    const option = document.createElement("option");
+    option.value = key;
+    option.textContent = key;
+    typeSelect.appendChild(option);
+}
