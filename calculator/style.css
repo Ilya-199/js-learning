@@ -1,29 +1,102 @@
+
+html {
+    background: #eef1f3;                  
+}
+
 body {
     max-width: 420px;
-    margin: 40px auto;
-    padding: 0 16px;
-    font-family: system-ui, sans-serif;
-}
-input, select, button {
-    display: block;
-    width: 100%;
-    margin-bottom: 12px;
-    padding: 10px;
+    margin: 32px auto;
+    padding: 32px 28px 36px;
+    background: #ffffff;                  
+    border: 1px solid #d8dee2;
+    font-family: "Golos Text", system-ui, sans-serif;
     font-size: 16px;
+    line-height: 1.5;
+    color: #17293b;                      
+    font-variant-numeric: tabular-nums;  
 }
-#result {
-    margin-top: 20px;
-    padding: 14px;
-    background: #f2f0ea;
-    border-radius: 8px;
+
+h1 {
+    margin: 0 0 24px;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
+
+
 #pricelist {
     white-space: pre-line;
-    margin-bottom: 16px;
-    color: #555;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d8dee2;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6b7a85;                       
+
+h1{
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #6b7a85;
 }
+
+
+
+input, select {
+    display: block;
+    box-sizing: border-box;               
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 10px 12px;
+    border: 1px solid #c3ccd2;
+    background: #ffffff;
+    font-family: inherit;                 
+    font-size: 16px;
+    color: inherit;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #12506b;
+    outline-offset: 1px;
+}
+
+
+
 input[type="checkbox"] {
     display: inline;
     width: auto;
-    margin-right: 6px;
+    margin-right: 8px;
+}
+
+label[for="urgent"] {
+    margin-bottom: 24px;
+    font-size: 16px;
+    color: #17293b;
+}
+
+
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background: #12506b;                  
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0e4257;
+}
+
+#result{
+    white-space: pre-line;
+    margin: 28px 0 0;
+    padding-top: 16px;
+    border-top: 3px double #17293b;       
+}
+
+#result:empty {
+    display: none;                        
 }

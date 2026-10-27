@@ -68,7 +68,7 @@ button.addEventListener("click", function () {
     }
 
     console.log(history);
-    resultBox.textContent = `Расчет№${history.length} К оплате ${urgentprice} Срок ${srok} дней Прошлый расчет ${proverka}`;
+    resultBox.textContent = `Расчет№${history.length} \n К оплате ${urgentprice} Срок ${srok} дней \n Прошлый расчет ${proverka}`;
 });
 
 const priceBox = document.querySelector("#pricelist");
